@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran | TASKA CERDIK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">TASKA <span>CERDIK</span></div>
+    <nav>
+        <a href="index.html">UTAMA</a>
+        <a href="pendaftaran.html" class="active">PENDAFTARAN</a>
+        <a href="cawangan.html">CAWANGAN</a>
+        <a href="berita.html">BERITA</a>
+        <a href="kerjaya.html">KERJAYA</a>
+        <a href="tentang.html">MENGENALI KAMI</a>
+    </nav>
+</header>
+
+<section class="page-hero">
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+    <span class="star s1">★</span>
+    <span class="star s2">★</span>
+    <div>
+        <h1>Borang Pendaftaran Anak</h1>
+        <p>Sila isikan butiran berikut dengan lengkap untuk mendaftar</p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="section-box">
+        <div class="form-intro">
+            <div class="icon">📝</div>
+            <h2>Maklumat Pendaftaran</h2>
+            <p>Sila pastikan semua maklumat diberi adalah tepat dan lengkap.</p>
+        </div>
+
+        <form action="proses_pendaftaran.php" method="post">
+
+            <div class="form-section">
+                <h3 class="section-heading"><span class="section-number">1</span> Maklumat Anak</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nama Penuh Anak <span class="required">*</span></label>
+                        <input type="text" name="nama_anak" required placeholder="Contoh: Nur Amirah binti Ahmad">
+                    </div>
+                    <div class="form-group">
+                        <label>Tarikh Lahir <span class="required">*</span></label>
+                        <input type="date" name="tarikh_lahir" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Umur</label>
+                        <input type="text" name="umur" placeholder="Contoh: 2 tahun 6 bulan">
+                    </div>
+                    <div class="form-group">
+                        <label>Jantina <span class="required">*</span></label>
+                        <select name="jantina" required>
+                            <option value="">— Sila Pilih —</option>
+                            <option>Lelaki</option>
+                            <option>Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="form-group full">
+                        <label>Alamat Rumah <span class="required">*</span></label>
+                        <textarea name="alamat" required placeholder="Alamat tempat tinggal anak"></textarea>
+                    </div>
+                    <div class="form-group full">
+                        <label>Alahan / Penyakit / Keperluan Khas</label>
+                        <textarea name="kesihatan" placeholder="Nyatakan sebarang alahan makanan, penyakit atau keperluan khas jika ada"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-heading"><span class="section-number">2</span> Maklumat Bapa / Penjaga</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nama Penuh <span class="required">*</span></label>
+                        <input type="text" name="nama_bapa" required>
+                    </div>
+                    <div class="form-group">
+                        <label>No. Kad Pengenalan <span class="required">*</span></label>
+                        <input type="text" name="ic_bapa" required placeholder="Contoh: 800101-10-xxxx">
+                    </div>
+                    <div class="form-group">
+                        <label>No. Telefon <span class="required">*</span></label>
+                        <input type="tel" name="tel_bapa" required placeholder="Contoh: 012-3456789">
+                    </div>
+                    <div class="form-group">
+                        <label>Pekerjaan</label>
+                        <input type="text" name="kerja_bapa">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-heading"><span class="section-number">3</span> Maklumat Ibu / Penjaga</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nama Penuh <span class="required">*</span></label>
+                        <input type="text" name="nama_ibu" required>
+                    </div>
+                    <div class="form-group">
+                        <label>No. Kad Pengenalan <span class="required">*</span></label>
+                        <input type="text" name="ic_ibu" required placeholder="Contoh: 850202-14-xxxx">
+                    </div>
+                    <div class="form-group">
+                        <label>No. Telefon <span class="required">*</span></label>
+                        <input type="tel" name="tel_ibu" required placeholder="Contoh: 019-8765432">
+                    </div>
+                    <div class="form-group">
+                        <label>Pekerjaan</label>
+                        <input type="text" name="kerja_ibu">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-heading"><span class="section-number">4</span> Pilihan Tempat & Waktu</h3>
+                <div class="form-group">
+                    <label>Pusat TASKA Cerdik <span class="required">*</span></label>
+                    <select name="pusat" required>
+                        <option value="">— Sila Pilih —</option>
+                        <option>Cawangan Segamat</option>
+                        <option>Cawangan Jementah</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Pilihan Tempoh Penjagaan <span class="required">*</span></label>
+                    <div class="radio-box">
+                        <label class="radio-option">
+                            <input type="radio" name="tempoh" value="penuh" required>
+                            <span>Sepenuh Masa</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="tempoh" value="separuh">
+                            <span>Separuh Masa</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="tempoh" value="harian">
+                            <span>Bayaran Harian</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="agreement">
+                <input type="checkbox" id="setuju" name="setuju" required>
+                <label for="setuju"><span class="required">*</span> Saya mengaku bahawa semua maklumat di atas adalah benar. Saya bersedia mematuhi segala peraturan TASKA Cerdik serta membayar yuran mengikut kadar yang ditetapkan.</label>
+            </div>
+
+            <div class="button-row">
+                <button type="reset" class="btn btn-reset">🗑️ Kosongkan Borang</button>
+                <button type="submit" name="submit" class="btn btn-submit">✅ Hantar Pendaftaran</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="section-box">
+        <h2>✅ Faedah Mendaftar Bersama Kami</h2>
+        <div class="benefit-grid">
+            <div class="benefit-item">
+                <div class="benefit-icon">🛡️</div>
+                <h4>Persekitaran Selamat</h4>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🍎</div>
+                <h4>Makanan Berkhasiat</h4>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">📚</div>
+                <h4>Pembelajaran Awal</h4>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">❤️</div>
+                <h4>Penuh Kasih Sayang</h4>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">👩‍🏫</div>
+                <h4>Pengasuh Terlatih</h4>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">💰</div>
+                <h4>Yuran Berpatutan</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-icons">🏠 📞 ✉️ 📘</div>
+    <h4>TASKA CERDIK — Pusat Asuhan Kanak-Kanak</h4>
+    <p>&copy; 2026 TASKA Cerdik. Hak Cipta Terpelihara.</p>
+</footer>
+
+</body>
+</html>

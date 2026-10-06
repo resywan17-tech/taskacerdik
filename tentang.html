@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami | TASKA CERDIK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<style>
+	/* ==============================================
+   GAYA UTAMA LAMAN WEB TASKA CERDIK
+   Digunakan oleh SEMUA halaman: index, pendaftaran,
+   pusat, berita, kerjaya, tentang, program
+   ============================================== */
+
+/* ----- SETTING ASAS ----- */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{
+    background:#fff9f0;
+    color:#17245c;
+}
+
+/* ----- HEADER & NAVIGASI ----- */
+header{
+    width:100%;
+    min-height:90px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 70px;
+    box-shadow:0 2px 12px rgba(0,0,0,.10);
+    position:relative;
+    z-index:100;
+}
+.logo{
+    font-size:32px;
+    font-weight:bold;
+    color:#2451b8;
+    white-space:nowrap;
+}
+.logo span{color:#ff9f1c;}
+nav{
+    display:flex;
+    align-items:center;
+}
+nav a{
+    text-decoration:none;
+    color:#17245c;
+    margin-left:30px;
+    font-size:15px;
+    font-weight:bold;
+    transition:.3s;
+}
+nav a:hover,
+nav a.active{
+    color:#ff9f1c;
+}
+
+/* ----- TAJUK HALAMAN (untuk semua halaman kecuali index) ----- */
+.page-hero{
+    position:relative;
+    overflow:hidden;
+    min-height:300px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(135deg,#2451b8 0%,#3768d2 60%,#ff9f1c 100%);
+    color:white;
+}
+.page-hero h1{
+    font-size:48px;
+    margin-bottom:12px;
+    position:relative;
+    z-index:2;
+}
+.page-hero p{
+    font-size:19px;
+    line-height:1.6;
+    position:relative;
+    z-index:2;
+}
+.circle{
+    position:absolute;
+    border-radius:50%;
+    opacity:.25;
+}
+.circle.one{
+    width:180px;
+    height:180px;
+    background:white;
+    left:-60px;
+    top:-50px;
+}
+.circle.two{
+    width:230px;
+    height:230px;
+    background:#ffd166;
+    right:-70px;
+    bottom:-100px;
+}
+.star{
+    position:absolute;
+    color:#ffd166;
+    font-size:36px;
+    opacity:.9;
+}
+.star.s1{left:15%;top:55px;}
+.star.s2{right:18%;top:100px;}
+
+/* ----- KANDUNGAN UTAMA ----- */
+.container{
+    width:92%;
+    max-width:1050px;
+    margin:50px auto 70px;
+}
+.section-box{
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 12px 35px rgba(36,81,184,.12);
+    border:1px solid rgba(36,81,184,.08);
+    margin-bottom:30px;
+}
+.section-box h2{
+    color:#2451b8;
+    font-size:24px;
+    margin-bottom:20px;
+    padding-bottom:10px;
+    border-bottom:2px solid #e8edf7;
+}
+
+/* ----- BORANG & INPUT ----- */
+.form-intro{
+    text-align:center;
+    margin-bottom:35px;
+}
+.form-intro .icon{
+    width:72px;
+    height:72px;
+    margin:0 auto 15px;
+    border-radius:50%;
+    background:#fff0d9;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+}
+.form-intro h2{
+    color:#2451b8;
+    font-size:30px;
+    margin-bottom:8px;
+}
+.form-intro p{
+    color:#718096;
+    font-size:15px;
+}
+.form-section{
+    margin-top:30px;
+    padding:27px;
+    background:#f8fbff;
+    border-radius:18px;
+    border-left:5px solid #ff9f1c;
+}
+.form-section:first-of-type{margin-top:0;}
+.section-heading{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#2451b8;
+    margin-bottom:22px;
+    font-size:21px;
+}
+.section-number{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#2451b8;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+.full{grid-column:1/-1;}
+.form-group{margin-bottom:18px;}
+.form-group label{
+    display:block;
+    font-weight:bold;
+    color:#26345f;
+    margin-bottom:8px;
+    font-size:14px;
+}
+.required{color:#ff6b35;}
+input, select, textarea{
+    width:100%;
+    padding:13px 14px;
+    border:1.5px solid #d8dfec;
+    border-radius:10px;
+    background:white;
+    color:#333;
+    font-size:15px;
+    outline:none;
+    transition:.25s;
+}
+input:focus, select:focus, textarea:focus{
+    border-color:#2451b8;
+    box-shadow:0 0 0 4px rgba(36,81,184,.08);
+}
+textarea{
+    min-height:105px;
+    resize:vertical;
+}
+.radio-box{
+    display:flex;
+    gap:12px;
+}
+.radio-option{
+    flex:1;
+    border:1.5px solid #d8dfec;
+    border-radius:10px;
+    padding:12px;
+    background:white;
+    cursor:pointer;
+    transition:.25s;
+}
+.radio-option:hover{
+    border-color:#2451b8;
+}
+.radio-option input{
+    width:auto;
+    margin-right:7px;
+}
+.radio-option label{
+    display:inline;
+    font-weight:normal;
+    cursor:pointer;
+}
+.agreement{
+    margin-top:25px;
+    padding:18px 20px;
+    background:#fff8e8;
+    border:1px solid #ffe0a3;
+    border-radius:12px;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+}
+.agreement input{
+    width:auto;
+    margin-top:4px;
+}
+.agreement label{
+    color:#555;
+    line-height:1.5;
+    font-size:14px;
+}
+.button-row{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:30px;
+}
+.btn{
+    border:0;
+    border-radius:12px;
+    padding:14px 30px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+.btn-submit, .btn-primary{
+    background:#2451b8;
+    color:white;
+    box-shadow:0 7px 18px rgba(36,81,184,.22);
+}
+.btn-submit:hover, .btn-primary:hover{
+    background:#193d91;
+    transform:translateY(-2px);
+}
+.btn-reset, .btn-secondary{
+    background:#ff9f1c;
+    color:white;
+}
+.btn-reset:hover, .btn-secondary:hover{
+    background:#e88900;
+    transform:translateY(-2px);
+}
+
+/* ----- KOTAK MAKLUMAT & PENGUMUMAN ----- */
+.notice-box{
+    background:#fff8e8;
+    border-left:4px solid #ff9f1c;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:15px;
+}
+.notice-box h3{
+    color:#a16300;
+    font-size:17px;
+    margin-bottom:6px;
+}
+.notice-box p{
+    color:#665522;
+    font-size:15px;
+    line-height:1.6;
+}
+.notice-date{
+    margin-top:8px;
+    font-size:13px;
+    color:#997722;
+}
+.note-box{
+    margin-top:15px;
+    padding:15px;
+    background:#fff8e8;
+    border-left:4px solid #ff9f1c;
+    border-radius:8px;
+    color:#8a6d00;
+    font-size:14px;
+}
+.note{
+    margin-top:12px;
+    font-size:13px;
+    color:#778;
+}
+
+/* ----- KAD CAWANGAN / AKTIVITI / JAWATAN ----- */
+.branch-card, .job-card{
+    border:2px solid #e8edf7;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:15px;
+    transition:.3s;
+}
+.branch-card:hover, .job-card:hover{
+    border-color:#ff9f1c;
+    background:#fffbf2;
+}
+.branch-card h3, .job-card h3{
+    color:#2451b8;
+    font-size:18px;
+    margin-bottom:8px;
+}
+.branch-card p, .job-card p{
+    color:#556688;
+    font-size:15px;
+    line-height:1.6;
+    margin:4px 0;
+}
+.job-meta{
+    font-size:14px;
+    color:#778;
+    margin-bottom:10px;
+}
+.closing-date{
+    display:inline-block;
+    background:#fff8e8;
+    color:#a16300;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    margin-top:8px;
+}
+
+/* ----- SENARAI KELAYAKAN ----- */
+.qual-list{
+    list-style:none;
+}
+.qual-list li{
+    padding:10px 0;
+    border-bottom:1px solid #e8edf7;
+    color:#445;
+    font-size:15px;
+    line-height:1.6;
+}
+.qual-list li:last-child{border-bottom:none;}
+.qual-list strong{color:#2451b8;}
+
+/* ----- JADUAL ----- */
+.hours-table, .calendar-table{
+    width:100%;
+    border-collapse:collapse;
+}
+.hours-table td,
+.calendar-table th,
+.calendar-table td{
+    padding:12px 15px;
+    text-align:left;
+    border-bottom:1px solid #e8edf7;
+    font-size:15px;
+}
+.hours-table td:first-child{
+    font-weight:bold;
+    color:#2451b8;
+    width:40%;
+}
+.calendar-table th{
+    background:#f8fbff;
+    color:#2451b8;
+    font-weight:bold;
+}
+.holiday{color:#d63031;font-weight:500;}
+.important{color:#2451b8;font-weight:bold;}
+
+/* ----- GRID KEMUDAHAN / FAEDAH / KELEBIHAN ----- */
+.facility-grid, .benefit-grid, .benefit-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+.facility-item, .benefit-item{
+    background:#f8fbff;
+    border-radius:12px;
+    padding:18px;
+    text-align:center;
+    border-bottom:4px solid #2451b8;
+    transition:.3s;
+}
+.facility-item:hover, .benefit-item:hover{
+    transform:translateY(-5px);
+    border-bottom-color:#ff9f1c;
+}
+.facility-icon, .benefit-icon{
+    font-size:36px;
+    margin-bottom:10px;
+}
+.facility-item h4, .benefit-item h4{
+    color:#2451b8;
+    font-size:15px;
+}
+
+/* ----- HUBUNGI ----- */
+.contact-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:8px 0;
+    font-size:15px;
+}
+.contact-row strong{color:#2451b8;}
+.contact-row a{
+    color:#ff9f1c;
+    text-decoration:none;
+}
+.contact-row a:hover{text-decoration:underline;}
+.map-box{
+    margin-top:15px;
+    background:#eef3f8;
+    border-radius:12px;
+    padding:40px;
+    text-align:center;
+    color:#667;
+}
+
+/* ----- SENARAI ARTIKEL ----- */
+.article-list{
+    list-style:none;
+}
+.article-list li{
+    padding:14px 0;
+    border-bottom:1px solid #e8edf7;
+}
+.article-list li:last-child{border-bottom:none;}
+.article-list a{
+    color:#2451b8;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:15px;
+}
+.article-list a:hover{color:#ff9f1c;}
+.article-desc{
+    color:#778;
+    font-size:14px;
+    margin-top:5px;
+}
+
+/* ----- KELEBIHAN (PENDAFTARAN) ----- */
+.benefits{
+    margin-top:55px;
+}
+.benefits-title{
+    text-align:center;
+    color:#ff7900;
+    font-size:30px;
+    margin-bottom:25px;
+}
+.benefit{
+    background:white;
+    padding:28px 22px;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0 6px 20px rgba(0,0,0,.07);
+    border-bottom:5px solid #ff9f1c;
+    transition:.3s;
+}
+.benefit:hover{transform:translateY(-7px);}
+.benefit h3{
+    color:#2451b8;
+    font-size:18px;
+    margin-bottom:8px;
+}
+.benefit p{
+    color:#718096;
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* ----- FOOTER ----- */
+footer{
+    background:#2451b8;
+    border-top:7px solid #ff9f1c;
+    text-align:center;
+    padding:30px 20px;
+}
+.footer-icons{
+    font-size:24px;
+    letter-spacing:7px;
+    margin-bottom:10px;
+}
+footer h4{
+    color:white;
+    font-weight:normal;
+    font-size:15px;
+    margin-bottom:8px;
+}
+footer p{
+    color:#ffd166;
+    font-size:14px;
+}
+
+/* ----- HALAMAN UTAMA SAHAJA ----- */
+.hero{
+    min-height:650px;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:70px 8%;
+    background:#eef3f8;
+}
+.hero-content{
+    width:48%;
+    position:relative;
+    z-index:5;
+}
+.badge{
+    display:inline-block;
+    background:#fff;
+    color:#2451b8;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+.hero h1{
+    font-size:64px;
+    line-height:1.05;
+    color:#20258f;
+    margin-bottom:8px;
+}
+.hero h1 span{
+    color:#ff8c00;
+}
+.hero h2{
+    color:#2451b8;
+    font-size:28px;
+    margin-bottom:20px;
+}
+.hero p{
+    color:#58718d;
+    font-size:18px;
+    line-height:1.7;
+    max-width:570px;
+}
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+}
+.btn{
+    text-decoration:none;
+    padding:14px 25px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.3s;
+    display:inline-block;
+}
+.btn-primary{
+    background:#2451b8;
+    color:white;
+    box-shadow:0 8px 20px rgba(36,81,184,.25);
+}
+.btn-primary:hover{
+    transform:translateY(-3px);
+    background:#193d91;
+}
+.btn-secondary{
+    background:#ff9f1c;
+    color:white;
+}
+.btn-secondary:hover{
+    transform:translateY(-3px);
+    background:#e88900;
+}
+.hero-visual{
+    width:46%;
+    min-height:430px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    z-index:4;
+}
+.kids-card{
+    width:430px;
+    height:360px;
+    background:white;
+    border-radius:35px;
+    box-shadow:0 20px 45px rgba(36,81,184,.15);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    transform:rotate(2deg);
+}
+.kids-icon{
+    font-size:150px;
+}
+.mini-card{
+    position:absolute;
+    background:white;
+    padding:15px 20px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    font-weight:bold;
+    color:#2451b8;
+}
+.card-one{top:15px;left:-35px;}
+.card-two{bottom:20px;right:-35px;}
+.card-three{top:45px;right:-45px;color:#ff8c00!important;}
+.circle1{
+    position:absolute;
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    background:#ff9f1c;
+    left:-60px;
+    top:60px;
+    opacity:.85;
+}
+.circle2{
+    position:absolute;
+    width:210px;
+    height:210px;
+    border-radius:50%;
+    right:-60px;
+    top:40px;
+    background:linear-gradient(45deg,#2451b8 50%,#ff9f1c 50%);
+    opacity:.9;
+}
+.star{
+    position:absolute;
+    color:#ffd166;
+}
+.star1{left:43%;top:100px;}
+.star2{right:12%;bottom:80px;}
+.small-circle{
+    position:absolute;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+}
+.small1{left:45%;bottom:70px;background:#5bc0a5;}
+.small2{left:55%;top:100px;background:#ff8fa3;}
+.small3{right:8%;top:300px;background:#ffd166;}
+.intro{
+    padding:80px 8%;
+    text-align:center;
+    background:#fff9f0;
+}
+.intro h2{
+    color:#ff7900;
+    font-size:46px;
+    margin-bottom:12px;
+}
+.intro h3{
+    color:#2451b8;
+    font-size:25px;
+    line-height:1.4;
+    margin-bottom:25px;
+}
+.intro > p{
+    max-width:950px;
+    margin:auto;
+    color:#58718d;
+    font-size:18px;
+    line-height:1.8;
+}
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    max-width:1050px;
+    margin:50px auto 0;
+}
+.feature{
+    background:white;
+    padding:30px 22px;
+    border-radius:22px;
+    box-shadow:0 7px 20px rgba(0,0,0,.08);
+    border-bottom:5px solid #ff9f1c;
+    transition:.3s;
+}
+.feature:hover{
+    transform:translateY(-8px);
+}
+.feature .icon{
+    font-size:48px;
+    margin-bottom:15px;
+}
+.feature h4{
+    color:#2451b8;
+    font-size:20px;
+    margin-bottom:10px;
+}
+.feature p{
+    color:#777;
+    font-size:14px;
+    line-height:1.6;
+}
+.programs{
+    padding:80px 8%;
+    background:#eef3f8;
+    text-align:center;
+}
+.programs h2{
+    color:#2451b8;
+    font-size:40px;
+    margin-bottom:12px;
+}
+.programs > p{
+    color:#58718d;
+    margin-bottom:35px;
+}
+.program-grid{
+    max-width:1050px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+.program{
+    background:white;
+    padding:30px 22px;
+    border-radius:20px;
+    text-align:left;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+}
+.program-icon{
+    font-size:40px;
+    margin-bottom:12px;
+}
+.program h3{
+    color:#2451b8;
+    margin-bottom:10px;
+}
+.program p{
+    color:#718096;
+    line-height:1.6;
+    font-size:14px;
+}
+.cta{
+    padding:70px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#2451b8,#3768d2);
+    color:white;
+}
+.cta h2{
+    font-size:38px;
+    margin-bottom:12px;
+}
+.cta p{
+    font-size:17px;
+    margin-bottom:25px;
+}
+.cta a{
+    display:inline-block;
+    background:#ff9f1c;
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.3s;
+}
+.cta a:hover{
+    transform:translateY(-3px);
+    background:#e88900;
+}
+
+/* ----- RESPONSIF ----- */
+@media(max-width:900px){
+    header{
+        padding:20px 30px;
+        flex-direction:column;
+        gap:18px;
+    }
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
+    }
+    nav a{
+        margin:0 6px;
+        font-size:13px;
+    }
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:70px 25px;
+    }
+    .hero-content,
+    .hero-visual{
+        width:100%;
+    }
+    .hero-content{
+        margin-bottom:40px;
+    }
+    .hero p{
+        margin:auto;
+    }
+    .hero-buttons{
+        justify-content:center;
+    }
+    .features,
+    .program-grid,
+    .benefit-grid,
+    .facility-grid,
+    .form-grid{
+        grid-template-columns:1fr;
+        max-width:500px;
+    }
+}
+@media(max-width:550px){
+    .logo{font-size:26px;}
+    .hero{
+        min-height:700px;
+    }
+    .hero h1{
+        font-size:42px;
+    }
+    .hero h2{
+        font-size:22px;
+    }
+    .hero p{
+        font-size:15px;
+    }
+    .kids-card{
+        width:290px;
+        height:250px;
+    }
+    .kids-icon{
+        font-size:105px;
+    }
+    .mini-card{
+        padding:10px 12px;
+        font-size:12px;
+    }
+    .card-one{left:-10px;}
+    .card-two{right:-10px;}
+    .card-three{right:-10px;}
+    .intro h2{
+        font-size:35px;
+    }
+    .intro h3{
+        font-size:20px;
+    }
+    .page-hero{min-height:250px;padding:45px 20px;}
+    .page-hero h1{font-size:30px;}
+    .container{width:94%;margin-top:30px;}
+    .section-box, .form-card{padding:18px;}
+    .form-section{padding:20px 15px;}
+    .section-heading{font-size:18px;}
+    .radio-box{flex-direction:column;}
+    .button-row{flex-direction:column-reverse;}
+    .btn{width:100%;}
+}
+	
+/* =====================================================
+   TENTANG KAMI - REKAAN MODEN
+   ===================================================== */
+.about-page{
+    background:linear-gradient(180deg,#fff9f0 0%,#f7faff 55%,#fff9f0 100%);
+    padding:70px 20px 80px;
+}
+.about-container{
+    width:92%;
+    max-width:1080px;
+    margin:auto;
+}
+.about-intro{
+    text-align:center;
+    max-width:760px;
+    margin:0 auto 38px;
+}
+.about-badge{
+    display:inline-block;
+    background:#fff;
+    color:#2451b8;
+    border:1px solid #e3eaf7;
+    padding:9px 18px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    box-shadow:0 6px 18px rgba(36,81,184,.08);
+}
+.about-intro h2{
+    margin:16px 0 10px;
+    color:#17245c;
+    font-size:42px;
+}
+.about-intro h2 span{color:#ff9f1c;}
+.about-intro p{
+    color:#718096;
+    font-size:17px;
+    line-height:1.7;
+}
+.about-highlight{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    background:linear-gradient(135deg,#2451b8,#3768d2);
+    color:white;
+    padding:28px 32px;
+    border-radius:24px;
+    box-shadow:0 15px 35px rgba(36,81,184,.18);
+    margin-bottom:30px;
+}
+.highlight-icon{
+    min-width:70px;
+    height:70px;
+    border-radius:20px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+}
+.about-highlight h3{
+    font-size:23px;
+    margin-bottom:7px;
+}
+.about-highlight p{
+    color:#eef4ff;
+    line-height:1.65;
+    font-size:15px;
+}
+.about-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+.about-card{
+    background:white;
+    border:1px solid #e7edf8;
+    border-radius:22px;
+    padding:28px;
+    box-shadow:0 10px 28px rgba(36,81,184,.08);
+    transition:.3s;
+}
+.about-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 16px 35px rgba(36,81,184,.13);
+}
+.about-card-large{
+    grid-column:1/-1;
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+}
+.card-icon{
+    min-width:58px;
+    height:58px;
+    border-radius:17px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+}
+.card-icon.blue{background:#edf3ff;}
+.card-icon.orange{background:#fff2dc;}
+.card-icon.green{background:#eafaf4;}
+.about-card h3{
+    color:#2451b8;
+    font-size:22px;
+    margin-bottom:10px;
+}
+.about-card p{
+    color:#64748b;
+    font-size:15px;
+    line-height:1.75;
+}
+.mission-list{
+    list-style:none;
+    margin-top:5px;
+}
+.mission-list li{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    padding:9px 0;
+    color:#5d6b82;
+    font-size:14px;
+    line-height:1.55;
+    border-bottom:1px solid #eef2f8;
+}
+.mission-list li:last-child{border-bottom:0;}
+.mission-list li span{
+    width:23px;
+    height:23px;
+    flex:none;
+    border-radius:50%;
+    background:#2451b8;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:12px;
+    font-weight:bold;
+}
+.team-section,.info-section{
+    margin-top:42px;
+}
+.section-heading-modern{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:20px;
+}
+.heading-icon{
+    width:52px;
+    height:52px;
+    border-radius:15px;
+    background:#fff0d9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:27px;
+}
+.section-heading-modern span{
+    color:#ff9f1c;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+.section-heading-modern h2{
+    color:#17245c;
+    font-size:29px;
+    margin-top:3px;
+}
+.team-card{
+    background:white;
+    border-radius:24px;
+    padding:28px;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:22px;
+    align-items:center;
+    border:1px solid #e7edf8;
+    box-shadow:0 10px 28px rgba(36,81,184,.08);
+}
+.team-avatar{
+    width:85px;
+    height:85px;
+    border-radius:50%;
+    background:#edf3ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:45px;
+}
+.team-card h3{
+    color:#2451b8;
+    margin-bottom:8px;
+    font-size:20px;
+}
+.team-card p{
+    color:#64748b;
+    font-size:14px;
+    line-height:1.7;
+}
+.team-tags{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+.team-tags span{
+    white-space:nowrap;
+    background:#f8fbff;
+    color:#2451b8;
+    border-radius:20px;
+    padding:7px 12px;
+    font-size:12px;
+    font-weight:bold;
+}
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+.info-item{
+    background:white;
+    border:1px solid #e7edf8;
+    border-radius:20px;
+    padding:23px 18px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:0 8px 24px rgba(36,81,184,.06);
+}
+.info-icon{
+    width:48px;
+    height:48px;
+    flex:none;
+    border-radius:14px;
+    background:#fff4e2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+}
+.info-item small{
+    display:block;
+    color:#ff9f1c;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:.7px;
+    margin-bottom:5px;
+}
+.info-item strong{
+    color:#2451b8;
+    font-size:14px;
+    line-height:1.55;
+}
+.about-cta{
+    margin-top:45px;
+    text-align:center;
+    padding:45px 25px;
+    border-radius:28px;
+    background:linear-gradient(135deg,#2451b8,#3768d2);
+    color:white;
+    box-shadow:0 15px 35px rgba(36,81,184,.18);
+}
+.cta-stars{
+    color:#ffd166;
+    letter-spacing:8px;
+    font-size:18px;
+    margin-bottom:8px;
+}
+.about-cta h2{
+    font-size:32px;
+    margin-bottom:10px;
+}
+.about-cta p{
+    max-width:650px;
+    margin:0 auto 22px;
+    color:#eef4ff;
+    line-height:1.7;
+    font-size:15px;
+}
+.about-cta a{
+    display:inline-block;
+    text-decoration:none;
+    background:#ff9f1c;
+    color:white;
+    padding:13px 25px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.3s;
+}
+.about-cta a:hover{
+    background:#e88900;
+    transform:translateY(-3px);
+}
+.project-note{
+    text-align:center;
+    margin-top:25px;
+    color:#8993a5;
+    font-size:12px;
+    font-style:italic;
+}
+@media(max-width:800px){
+    .about-grid{grid-template-columns:1fr;}
+    .about-card-large{grid-column:auto;}
+    .team-card{grid-template-columns:1fr;text-align:center;}
+    .team-avatar{margin:auto;}
+    .team-tags{flex-direction:row;justify-content:center;flex-wrap:wrap;}
+    .info-grid{grid-template-columns:1fr;}
+}
+@media(max-width:550px){
+    .about-page{padding:45px 10px 60px;}
+    .about-intro h2{font-size:32px;}
+    .about-highlight{padding:23px;flex-direction:column;text-align:center;}
+    .about-card,.team-card{padding:22px;}
+    .about-card-large{display:block;}
+    .card-icon{margin-bottom:14px;}
+    .section-heading-modern h2{font-size:24px;}
+}
+
+</style>
+
+<header>
+    <div class="logo">TASKA <span>CERDIK</span></div>
+    <nav>
+        <a href="index.html">UTAMA</a>
+        <a href="pendaftaran.html">PENDAFTARAN</a>
+        <a href="cawangan.html">CAWANGAN</a>
+        <a href="berita.html">BERITA</a>
+        <a href="kerjaya.html">KERJAYA</a>
+        <a href="tentang.html" class="active">MENGENALI KAMI</a>
+    </nav>
+</header>
+
+<section class="page-hero">
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+    <span class="star s1">★</span>
+    <span class="star s2">★</span>
+    <div>
+        <h1>Tentang Kami</h1>
+        <p>Mengenal lebih dekat siapa kami dan apa yang kami lakukan untuk anak-anak anda</p>
+    </div>
+</section>
+
+
+<section class="about-page">
+    <div class="about-container">
+
+        <div class="about-intro">
+            <span class="about-badge">💙 MENGENALI KAMI</span>
+            <h2>Tentang <span>TASKA CERDIK</span></h2>
+            <p>
+                Tempat yang ceria, selamat dan penuh kasih sayang untuk
+                membantu anak-anak membesar, belajar dan berkembang dengan baik.
+            </p>
+        </div>
+
+        <div class="about-highlight">
+            <div class="highlight-icon">🏡</div>
+            <div>
+                <h3>Ruang Selamat Untuk Si Kecil</h3>
+                <p>
+                    TASKA CERDIK menyediakan persekitaran penjagaan yang bersih,
+                    selesa dan mesra kanak-kanak supaya setiap anak berasa
+                    dihargai, disayangi dan selamat sepanjang berada di taska.
+                </p>
+            </div>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-card about-card-large">
+                <div class="card-icon blue">🌈</div>
+                <div>
+                    <h3>Pengenalan</h3>
+                    <p>
+                        Selamat datang ke <strong>TASKA CERDIK</strong>. Kami adalah
+                        pusat jagaan kanak-kanak yang ditubuhkan untuk menyediakan
+                        perkhidmatan penjagaan dan pendidikan awal yang selamat,
+                        bersih serta selesa. Pusat jagaan ini dirancang untuk
+                        membantu ibu bapa yang bekerja dengan penuh kasih sayang
+                        dan tanggungjawab terhadap setiap anak yang dijaga.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-card">
+                <div class="card-icon orange">🎯</div>
+                <h3>Visi Kami</h3>
+                <p>
+                    Menjadi pusat jagaan kanak-kanak yang dipercayai oleh ibu bapa
+                    serta menyediakan persekitaran yang kondusif untuk perkembangan
+                    anak-anak secara menyeluruh — dari segi jasmani, emosi, rohani
+                    dan intelek.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <div class="card-icon green">💡</div>
+                <h3>Misi Kami</h3>
+                <ul class="mission-list">
+                    <li><span>✓</span> Persekitaran penjagaan yang selamat, bersih dan sihat.</li>
+                    <li><span>✓</span> Pembelajaran dan aktiviti mengikut kesesuaian umur.</li>
+                    <li><span>✓</span> Kasih sayang dan perhatian yang sama rata.</li>
+                    <li><span>✓</span> Kerjasama erat bersama ibu bapa.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <div class="section-heading-modern">
+                <span class="heading-icon">👩‍🏫</span>
+                <div>
+                    <span>SIAPA DI SEBALIK TASKA CERDIK?</span>
+                    <h2>Pasukan Kami</h2>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">👩‍👧</div>
+                <div>
+                    <h3>Pengasuh Yang Prihatin</h3>
+                    <p>
+                        Di TASKA CERDIK, kami mempunyai sekumpulan pengasuh yang
+                        terlatih, sabar dan berpengalaman dalam menjaga kanak-kanak.
+                        Setiap pengasuh sentiasa memastikan keselamatan, kebersihan
+                        dan kesejahteraan anak-anak sentiasa dijaga sepanjang masa
+                        berada di pusat jagaan.
+                    </p>
+                </div>
+                <div class="team-tags">
+                    <span>❤️ Penyayang</span>
+                    <span>🛡️ Prihatin</span>
+                    <span>⭐ Berpengalaman</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="section-heading-modern">
+                <span class="heading-icon">📍</span>
+                <div>
+                    <span>KENALI PUSAT KAMI</span>
+                    <h2>Maklumat Cawangan</h2>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div>
+                        <small>LOKASI</small>
+                        <strong>Segamat, Jementah</strong>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">👶</div>
+                    <div>
+                        <small>UMUR DITERIMA</small>
+                        <strong>2 Bulan - 6 tahun</strong>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">🕐</div>
+                    <div>
+                        <small>WAKTU OPERASI</small>
+                        <strong>Isnin – Jumaat<br>7:00 pagi – 6:00 petang</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-cta">
+            <div class="cta-stars">★ ✦ ★</div>
+            <h2>Setiap Anak Istimewa</h2>
+            <p>
+                Kami percaya setiap anak mempunyai potensi tersendiri.
+                Bersama-sama, kita membina asas yang baik untuk masa depan mereka.
+            </p>
+            <a href="pendaftaran.html">DAFTAR SEKARANG →</a>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="footer-icons">🏠 📞 ✉️ 📘</div>
+    <h4>TASKA CERDIK — Pusat Asuhan Kanak-Kanak</h4>
+    <p>&copy; 2026 TASKA Cerdik. Hak Cipta Terpelihara.</p>
+</footer>
+
+</body>
+</html>
